@@ -1,0 +1,19 @@
+﻿<div [ngSwitch]="loading">
+    <div *ngSwitchCase="false">
+        <!------------------------------------------->
+        <div id="permin-div" *ngIf="permin">
+            <div class="row">
+                <div class="col-sm-6">GPM</div>
+                <div class="col-sm-6">XPM</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">{{permin.gpm}}</div>
+                <div class="col-sm-6">{{permin.xpm}}</div>
+            </div>
+        </div>
+        <!------------------------------------------->
+    </div>
+    <div *ngSwitchCase="true">
+        <loading-indicator></loading-indicator>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿#matches-div {
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 2%;
+    background-color: rgb(27,27,27);
+    color:rgb(123,0,0);
+    font-size:20px;
+    margin: 4px;
+}
+
+.loss {
+    color: red !important;
+}
+
+.win {
+    color: green !important;
+}
+
+#header-div{
+    text-align: center;
+    font-size: 32px;
+    height: 50px;
+}
+
+#matches-div-inner {
+    font-size:16px !important;
+}
+
+.row-div {
+    line-height: 50px !important;
+}
+
+#img-div img {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+}
+
+.abilities-img-div img {
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+.col-1, .col-3, .col-4 {
+    width: 100px;
+    float: left;
+}
+
+.col-2 {
+    width: 150px;
+    float: left;
+}
+
+.col-5 {
+    width: 30px;
+    float: left;
+}
+
+.col-5-h {
+    width: 180px;
+    float: left;
+}

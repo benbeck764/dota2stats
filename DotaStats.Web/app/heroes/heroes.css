@@ -1,0 +1,9 @@
+﻿#hero-records-div {
+    width: 1500px;
+    display: inline-block;
+    margin-top: 50px;
+    position: fixed !important;
+    margin-top: 55px !important;
+    overflow-y: auto !important;
+    height: 100% !important;
+}

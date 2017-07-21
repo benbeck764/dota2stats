@@ -1,0 +1,45 @@
+﻿#name-div{
+    text-align: center;
+    width: 400px;
+    height: 75px;
+    padding: 2%;
+    background-color: rgb(27,27,27);
+    color:rgb(123,0,0);
+    font-size: 32px;
+    margin: 4px;
+}
+
+#image-div{
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    padding: 2%;
+    background-color: rgb(27,27,27);
+    color:rgb(123,0,0);
+    font-size: 32px;
+    margin: 4px;
+}
+
+#hero-div {
+    position: relative;
+}
+
+.col-1 {
+    width: 400px;
+    margin: 2px;
+    position:absolute;
+    left: 0;
+}
+
+.col-2 {
+    width: 700px;
+    margin: 2px;
+    position:absolute;
+    left: 404px;
+}
+
+.col-3 {
+    width: 400px;
+    position:absolute;
+    left: 1104px;
+}

@@ -1,0 +1,12 @@
+﻿body {
+}
+#winrate-div {
+    text-align: center;
+    width: 400px;
+    height: 75px;
+    padding: 2%;
+    background-color: rgb(27,27,27);
+    color:rgb(123,0,0);
+    font-size:20px;
+    margin: 4px;
+}

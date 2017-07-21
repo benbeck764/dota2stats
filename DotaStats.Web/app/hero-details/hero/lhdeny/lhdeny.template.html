@@ -1,0 +1,19 @@
+﻿<div [ngSwitch]="loading">
+    <div *ngSwitchCase="false">
+        <!------------------------------------------->
+        <div id="lhdeny-div" *ngIf="lhdeny">
+            <div class="row">
+                <div class="col-sm-6">Last Hits</div>
+                <div class="col-sm-6">Denies</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">{{lhdeny.lh}}</div>
+                <div class="col-sm-6">{{lhdeny.deny}}</div>
+            </div>
+        </div>
+        <!------------------------------------------->
+    </div>
+    <div *ngSwitchCase="true">
+        <loading-indicator></loading-indicator>
+    </div>
+</div>

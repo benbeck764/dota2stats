@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+    <TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotaStats.Web</RootNamespace>
+    <AssemblyName>DotaStats.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.component.css" />
+    <Content Include="app\app.component.template.html" />
+    <Content Include="app\hero-details\hero-details.template.html" />
+    <Content Include="app\hero-details\hero-details.css" />
+    <Content Include="app\hero-details\hero\bestversus\bestversus.css" />
+    <Content Include="app\hero-details\hero\bestversus\bestversus.template.html" />
+    <Content Include="app\hero-details\hero\hero.css" />
+    <Content Include="app\hero-details\hero\hero.template.html" />
+    <Content Include="app\hero-details\hero\items\items.css" />
+    <Content Include="app\hero-details\hero\items\items.template.html" />
+    <Content Include="app\hero-details\hero\kda\kda.css" />
+    <Content Include="app\hero-details\hero\kda\kda.template.html" />
+    <Content Include="app\hero-details\hero\lhdeny\lhdeny.css" />
+    <Content Include="app\hero-details\hero\lhdeny\lhdeny.template.html" />
+    <Content Include="app\hero-details\hero\matches\matches.css" />
+    <Content Include="app\hero-details\hero\matches\matches.template.html" />
+    <Content Include="app\hero-details\hero\permin\permin.css" />
+    <Content Include="app\hero-details\hero\winrate\winrate.css" />
+    <Content Include="app\hero-details\hero\winrate\winrate.template.html" />
+    <Content Include="app\hero-details\hero\worstversus\worstversus.css" />
+    <Content Include="app\hero-details\hero\worstversus\worstversus.template.html" />
+    <Content Include="app\heroes\heroes.css" />
+    <Content Include="app\heroes\heroes.template.html" />
+    <Content Include="app\loading-indicator\loading-indicator.css" />
+    <Content Include="Index.html" />
+    <Content Include="package.json" />
+    <Content Include="packages.config" />
+    <Content Include="app\dashboard\dashboard.component.template.html" />
+    <Content Include="app\hero-details\hero\permin\permin.template.html" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gulpfile.js" />
+    <Content Include="public\images\background.jpg" />
+    <Content Include="public\images\heroes_lg\abaddon.png" />
+    <Content Include="public\images\heroes_lg\abyssal_underlord.png" />
+    <Content Include="public\images\heroes_lg\alchemist.png" />
+    <Content Include="public\images\heroes_lg\ancient_apparition.png" />
+    <Content Include="public\images\heroes_lg\antimage.png" />
+    <Content Include="public\images\heroes_lg\arc_warden.png" />
+    <Content Include="public\images\heroes_lg\axe.png" />
+    <Content Include="public\images\heroes_lg\bane.png" />
+    <Content Include="public\images\heroes_lg\batrider.png" />
+    <Content Include="public\images\heroes_lg\beastmaster.png" />
+    <Content Include="public\images\heroes_lg\bloodseeker.png" />
+    <Content Include="public\images\heroes_lg\bounty_hunter.png" />
+    <Content Include="public\images\heroes_lg\brewmaster.png" />
+    <Content Include="public\images\heroes_lg\bristleback.png" />
+    <Content Include="public\images\heroes_lg\broodmother.png" />
+    <Content Include="public\images\heroes_lg\centaur.png" />
+    <Content Include="public\images\heroes_lg\chaos_knight.png" />
+    <Content Include="public\images\heroes_lg\chen.png" />
+    <Content Include="public\images\heroes_lg\clinkz.png" />
+    <Content Include="public\images\heroes_lg\crystal_maiden.png" />
+    <Content Include="public\images\heroes_lg\dark_seer.png" />
+    <Content Include="public\images\heroes_lg\dazzle.png" />
+    <Content Include="public\images\heroes_lg\death_prophet.png" />
+    <Content Include="public\images\heroes_lg\disruptor.png" />
+    <Content Include="public\images\heroes_lg\doom_bringer.png" />
+    <Content Include="public\images\heroes_lg\dragon_knight.png" />
+    <Content Include="public\images\heroes_lg\drow_ranger.png" />
+    <Content Include="public\images\heroes_lg\earthshaker.png" />
+    <Content Include="public\images\heroes_lg\earth_spirit.png" />
+    <Content Include="public\images\heroes_lg\elder_titan.png" />
+    <Content Include="public\images\heroes_lg\ember_spirit.png" />
+    <Content Include="public\images\heroes_lg\enchantress.png" />
+    <Content Include="public\images\heroes_lg\enigma.png" />
+    <Content Include="public\images\heroes_lg\faceless_void.png" />
+    <Content Include="public\images\heroes_lg\furion.png" />
+    <Content Include="public\images\heroes_lg\gyrocopter.png" />
+    <Content Include="public\images\heroes_lg\huskar.png" />
+    <Content Include="public\images\heroes_lg\invoker.png" />
+    <Content Include="public\images\heroes_lg\jakiro.png" />
+    <Content Include="public\images\heroes_lg\juggernaut.png" />
+    <Content Include="public\images\heroes_lg\keeper_of_the_light.png" />
+    <Content Include="public\images\heroes_lg\kunkka.png" />
+    <Content Include="public\images\heroes_lg\legion_commander.png" />
+    <Content Include="public\images\heroes_lg\leshrac.png" />
+    <Content Include="public\images\heroes_lg\lich.png" />
+    <Content Include="public\images\heroes_lg\life_stealer.png" />
+    <Content Include="public\images\heroes_lg\lina.png" />
+    <Content Include="public\images\heroes_lg\lion.png" />
+    <Content Include="public\images\heroes_lg\lone_druid.png" />
+    <Content Include="public\images\heroes_lg\luna.png" />
+    <Content Include="public\images\heroes_lg\lycan.png" />
+    <Content Include="public\images\heroes_lg\magnataur.png" />
+    <Content Include="public\images\heroes_lg\medusa.png" />
+    <Content Include="public\images\heroes_lg\meepo.png" />
+    <Content Include="public\images\heroes_lg\mirana.png" />
+    <Content Include="public\images\heroes_lg\monkey_king.png" />
+    <Content Include="public\images\heroes_lg\morphling.png" />
+    <Content Include="public\images\heroes_lg\naga_siren.png" />
+    <Content Include="public\images\heroes_lg\necrolyte.png" />
+    <Content Include="public\images\heroes_lg\nevermore.png" />
+    <Content Include="public\images\heroes_lg\night_stalker.png" />
+    <Content Include="public\images\heroes_lg\nyx_assassin.png" />
+    <Content Include="public\images\heroes_lg\obsidian_destroyer.png" />
+    <Content Include="public\images\heroes_lg\ogre_magi.png" />
+    <Content Include="public\images\heroes_lg\omniknight.png" />
+    <Content Include="public\images\heroes_lg\oracle.png" />
+    <Content Include="public\images\heroes_lg\phantom_assassin.png" />
+    <Content Include="public\images\heroes_lg\phantom_lancer.png" />
+    <Content Include="public\images\heroes_lg\phoenix.png" />
+    <Content Include="public\images\heroes_lg\puck.png" />
+    <Content Include="public\images\heroes_lg\pudge.png" />
+    <Content Include="public\images\heroes_lg\pugna.png" />
+    <Content Include="public\images\heroes_lg\queenofpain.png" />
+    <Content Include="public\images\heroes_lg\rattletrap.png" />
+    <Content Include="public\images\heroes_lg\razor.png" />
+    <Content Include="public\images\heroes_lg\riki.png" />
+    <Content Include="public\images\heroes_lg\rubick.png" />
+    <Content Include="public\images\heroes_lg\sand_king.png" />
+    <Content Include="public\images\heroes_lg\shadow_demon.png" />
+    <Content Include="public\images\heroes_lg\shadow_shaman.png" />
+    <Content Include="public\images\heroes_lg\shredder.png" />
+    <Content Include="public\images\heroes_lg\silencer.png" />
+    <Content Include="public\images\heroes_lg\skeleton_king.png" />
+    <Content Include="public\images\heroes_lg\skywrath_mage.png" />
+    <Content Include="public\images\heroes_lg\slardar.png" />
+    <Content Include="public\images\heroes_lg\slark.png" />
+    <Content Include="public\images\heroes_lg\sniper.png" />
+    <Content Include="public\images\heroes_lg\spectre.png" />
+    <Content Include="public\images\heroes_lg\spirit_breaker.png" />
+    <Content Include="public\images\heroes_lg\storm_spirit.png" />
+    <Content Include="public\images\heroes_lg\sven.png" />
+    <Content Include="public\images\heroes_lg\techies.png" />
+    <Content Include="public\images\heroes_lg\templar_assassin.png" />
+    <Content Include="public\images\heroes_lg\terrorblade.png" />
+    <Content Include="public\images\heroes_lg\tidehunter.png" />
+    <Content Include="public\images\heroes_lg\tinker.png" />
+    <Content Include="public\images\heroes_lg\tiny.png" />
+    <Content Include="public\images\heroes_lg\treant.png" />
+    <Content Include="public\images\heroes_lg\troll_warlord.png" />
+    <Content Include="public\images\heroes_lg\tusk.png" />
+    <Content Include="public\images\heroes_lg\undying.png" />
+    <Content Include="public\images\heroes_lg\ursa.png" />
+    <Content Include="public\images\heroes_lg\vengefulspirit.png" />
+    <Content Include="public\images\heroes_lg\venomancer.png" />
+    <Content Include="public\images\heroes_lg\viper.png" />
+    <Content Include="public\images\heroes_lg\visage.png" />
+    <Content Include="public\images\heroes_lg\warlock.png" />
+    <Content Include="public\images\heroes_lg\weaver.png" />
+    <Content Include="public\images\heroes_lg\windrunner.png" />
+    <Content Include="public\images\heroes_lg\winter_wyvern.png" />
+    <Content Include="public\images\heroes_lg\wisp.png" />
+    <Content Include="public\images\heroes_lg\witch_doctor.png" />
+    <Content Include="public\images\heroes_lg\zuus.png" />
+    <Content Include="public\images\heroes_vert\abaddon.jpg" />
+    <Content Include="public\images\heroes_vert\abyssal_underlord.jpg" />
+    <Content Include="public\images\heroes_vert\alchemist.jpg" />
+    <Content Include="public\images\heroes_vert\ancient_apparition.jpg" />
+    <Content Include="public\images\heroes_vert\antimage.jpg" />
+    <Content Include="public\images\heroes_vert\arc_warden.jpg" />
+    <Content Include="public\images\heroes_vert\axe.jpg" />
+    <Content Include="public\images\heroes_vert\bane.jpg" />
+    <Content Include="public\images\heroes_vert\batrider.jpg" />
+    <Content Include="public\images\heroes_vert\beastmaster.jpg" />
+    <Content Include="public\images\heroes_vert\bloodseeker.jpg" />
+    <Content Include="public\images\heroes_vert\bounty_hunter.jpg" />
+    <Content Include="public\images\heroes_vert\brewmaster.jpg" />
+    <Content Include="public\images\heroes_vert\bristleback.jpg" />
+    <Content Include="public\images\heroes_vert\broodmother.jpg" />
+    <Content Include="public\images\heroes_vert\centaur.jpg" />
+    <Content Include="public\images\heroes_vert\chaos_knight.jpg" />
+    <Content Include="public\images\heroes_vert\chen.jpg" />
+    <Content Include="public\images\heroes_vert\clinkz.jpg" />
+    <Content Include="public\images\heroes_vert\crystal_maiden.jpg" />
+    <Content Include="public\images\heroes_vert\dark_seer.jpg" />
+    <Content Include="public\images\heroes_vert\dazzle.jpg" />
+    <Content Include="public\images\heroes_vert\death_prophet.jpg" />
+    <Content Include="public\images\heroes_vert\disruptor.jpg" />
+    <Content Include="public\images\heroes_vert\doom_bringer.jpg" />
+    <Content Include="public\images\heroes_vert\dragon_knight.jpg" />
+    <Content Include="public\images\heroes_vert\drow_ranger.jpg" />
+    <Content Include="public\images\heroes_vert\earthshaker.jpg" />
+    <Content Include="public\images\heroes_vert\earth_spirit.jpg" />
+    <Content Include="public\images\heroes_vert\elder_titan.jpg" />
+    <Content Include="public\images\heroes_vert\ember_spirit.jpg" />
+    <Content Include="public\images\heroes_vert\enchantress.jpg" />
+    <Content Include="public\images\heroes_vert\enigma.jpg" />
+    <Content Include="public\images\heroes_vert\faceless_void.jpg" />
+    <Content Include="public\images\heroes_vert\furion.jpg" />
+    <Content Include="public\images\heroes_vert\gyrocopter.jpg" />
+    <Content Include="public\images\heroes_vert\huskar.jpg" />
+    <Content Include="public\images\heroes_vert\invoker.jpg" />
+    <Content Include="public\images\heroes_vert\jakiro.jpg" />
+    <Content Include="public\images\heroes_vert\juggernaut.jpg" />
+    <Content Include="public\images\heroes_vert\keeper_of_the_light.jpg" />
+    <Content Include="public\images\heroes_vert\kunkka.jpg" />
+    <Content Include="public\images\heroes_vert\legion_commander.jpg" />
+    <Content Include="public\images\heroes_vert\leshrac.jpg" />
+    <Content Include="public\images\heroes_vert\lich.jpg" />
+    <Content Include="public\images\heroes_vert\life_stealer.jpg" />
+    <Content Include="public\images\heroes_vert\lina.jpg" />
+    <Content Include="public\images\heroes_vert\lion.jpg" />
+    <Content Include="public\images\heroes_vert\lone_druid.jpg" />
+    <Content Include="public\images\heroes_vert\luna.jpg" />
+    <Content Include="public\images\heroes_vert\lycan.jpg" />
+    <Content Include="public\images\heroes_vert\magnataur.jpg" />
+    <Content Include="public\images\heroes_vert\medusa.jpg" />
+    <Content Include="public\images\heroes_vert\meepo.jpg" />
+    <Content Include="public\images\heroes_vert\mirana.jpg" />
+    <Content Include="public\images\heroes_vert\monkey_king.jpg" />
+    <Content Include="public\images\heroes_vert\morphling.jpg" />
+    <Content Include="public\images\heroes_vert\naga_siren.jpg" />
+    <Content Include="public\images\heroes_vert\necrolyte.jpg" />
+    <Content Include="public\images\heroes_vert\nevermore.jpg" />
+    <Content Include="public\images\heroes_vert\night_stalker.jpg" />
+    <Content Include="public\images\heroes_vert\nyx_assassin.jpg" />
+    <Content Include="public\images\heroes_vert\obsidian_destroyer.jpg" />
+    <Content Include="public\images\heroes_vert\ogre_magi.jpg" />
+    <Content Include="public\images\heroes_vert\omniknight.jpg" />
+    <Content Include="public\images\heroes_vert\oracle.jpg" />
+    <Content Include="public\images\heroes_vert\phantom_assassin.jpg" />
+    <Content Include="public\images\heroes_vert\phantom_lancer.jpg" />
+    <Content Include="public\images\heroes_vert\phoenix.jpg" />
+    <Content Include="public\images\heroes_vert\puck.jpg" />
+    <Content Include="public\images\heroes_vert\pudge.jpg" />
+    <Content Include="public\images\heroes_vert\pugna.jpg" />
+    <Content Include="public\images\heroes_vert\queenofpain.jpg" />
+    <Content Include="public\images\heroes_vert\rattletrap.jpg" />
+    <Content Include="public\images\heroes_vert\razor.jpg" />
+    <Content Include="public\images\heroes_vert\riki.jpg" />
+    <Content Include="public\images\heroes_vert\rubick.jpg" />
+    <Content Include="public\images\heroes_vert\sand_king.jpg" />
+    <Content Include="public\images\heroes_vert\shadow_demon.jpg" />
+    <Content Include="public\images\heroes_vert\shadow_shaman.jpg" />
+    <Content Include="public\images\heroes_vert\shredder.jpg" />
+    <Content Include="public\images\heroes_vert\silencer.jpg" />
+    <Content Include="public\images\heroes_vert\skeleton_king.jpg" />
+    <Content Include="public\images\heroes_vert\skywrath_mage.jpg" />
+    <Content Include="public\images\heroes_vert\slardar.jpg" />
+    <Content Include="public\images\heroes_vert\slark.jpg" />
+    <Content Include="public\images\heroes_vert\sniper.jpg" />
+    <Content Include="public\images\heroes_vert\spectre.jpg" />
+    <Content Include="public\images\heroes_vert\spirit_breaker.jpg" />
+    <Content Include="public\images\heroes_vert\storm_spirit.jpg" />
+    <Content Include="public\images\heroes_vert\sven.jpg" />
+    <Content Include="public\images\heroes_vert\techies.jpg" />
+    <Content Include="public\images\heroes_vert\templar_assassin.jpg" />
+    <Content Include="public\images\heroes_vert\terrorblade.jpg" />
+    <Content Include="public\images\heroes_vert\tidehunter.jpg" />
+    <Content Include="public\images\heroes_vert\tinker.jpg" />
+    <Content Include="public\images\heroes_vert\tiny.jpg" />
+    <Content Include="public\images\heroes_vert\treant.jpg" />
+    <Content Include="public\images\heroes_vert\troll_warlord.jpg" />
+    <Content Include="public\images\heroes_vert\tusk.jpg" />
+    <Content Include="public\images\heroes_vert\undying.jpg" />
+    <Content Include="public\images\heroes_vert\ursa.jpg" />
+    <Content Include="public\images\heroes_vert\vengefulspirit.jpg" />
+    <Content Include="public\images\heroes_vert\venomancer.jpg" />
+    <Content Include="public\images\heroes_vert\viper.jpg" />
+    <Content Include="public\images\heroes_vert\visage.jpg" />
+    <Content Include="public\images\heroes_vert\warlock.jpg" />
+    <Content Include="public\images\heroes_vert\weaver.jpg" />
+    <Content Include="public\images\heroes_vert\windrunner.jpg" />
+    <Content Include="public\images\heroes_vert\winter_wyvern.jpg" />
+    <Content Include="public\images\heroes_vert\wisp.jpg" />
+    <Content Include="public\images\heroes_vert\witch_doctor.jpg" />
+    <Content Include="public\images\heroes_vert\zuus.jpg" />
+    <Content Include="public\images\items_lg\abyssal_blade.png" />
+    <Content Include="public\images\items_lg\aegis.png" />
+    <Content Include="public\images\items_lg\aether_lens.png" />
+    <Content Include="public\images\items_lg\ancient_janggo.png" />
+    <Content Include="public\images\items_lg\arcane_boots.png" />
+    <Content Include="public\images\items_lg\armlet.png" />
+    <Content Include="public\images\items_lg\assault.png" />
+    <Content Include="public\images\items_lg\basher.png" />
+    <Content Include="public\images\items_lg\belt_of_strength.png" />
+    <Content Include="public\images\items_lg\bfury.png" />
+    <Content Include="public\images\items_lg\black_king_bar.png" />
+    <Content Include="public\images\items_lg\blades_of_attack.png" />
+    <Content Include="public\images\items_lg\blade_mail.png" />
+    <Content Include="public\images\items_lg\blade_of_alacrity.png" />
+    <Content Include="public\images\items_lg\blight_stone.png" />
+    <Content Include="public\images\items_lg\blink.png" />
+    <Content Include="public\images\items_lg\bloodstone.png" />
+    <Content Include="public\images\items_lg\bloodthorn.png" />
+    <Content Include="public\images\items_lg\boots.png" />
+    <Content Include="public\images\items_lg\boots_of_elves.png" />
+    <Content Include="public\images\items_lg\bottle.png" />
+    <Content Include="public\images\items_lg\bracer.png" />
+    <Content Include="public\images\items_lg\branches.png" />
+    <Content Include="public\images\items_lg\broadsword.png" />
+    <Content Include="public\images\items_lg\buckler.png" />
+    <Content Include="public\images\items_lg\butterfly.png" />
+    <Content Include="public\images\items_lg\chainmail.png" />
+    <Content Include="public\images\items_lg\cheese.png" />
+    <Content Include="public\images\items_lg\circlet.png" />
+    <Content Include="public\images\items_lg\clarity.png" />
+    <Content Include="public\images\items_lg\claymore.png" />
+    <Content Include="public\images\items_lg\cloak.png" />
+    <Content Include="public\images\items_lg\courier.png" />
+    <Content Include="public\images\items_lg\crimson_guard.png" />
+    <Content Include="public\images\items_lg\cyclone.png" />
+    <Content Include="public\images\items_lg\dagon.png" />
+    <Content Include="public\images\items_lg\dagon_2.png" />
+    <Content Include="public\images\items_lg\dagon_3.png" />
+    <Content Include="public\images\items_lg\dagon_4.png" />
+    <Content Include="public\images\items_lg\dagon_5.png" />
+    <Content Include="public\images\items_lg\demon_edge.png" />
+    <Content Include="public\images\items_lg\desolator.png" />
+    <Content Include="public\images\items_lg\diffusal_blade.png" />
+    <Content Include="public\images\items_lg\diffusal_blade_2.png" />
+    <Content Include="public\images\items_lg\dragon_lance.png" />
+    <Content Include="public\images\items_lg\dust.png" />
+    <Content Include="public\images\items_lg\eagle.png" />
+    <Content Include="public\images\items_lg\echo_sabre.png" />
+    <Content Include="public\images\items_lg\enchanted_mango.png" />
+    <Content Include="public\images\items_lg\energy_booster.png" />
+    <Content Include="public\images\items_lg\ethereal_blade.png" />
+    <Content Include="public\images\items_lg\faerie_fire.png" />
+    <Content Include="public\images\items_lg\flask.png" />
+    <Content Include="public\images\items_lg\flying_courier.png" />
+    <Content Include="public\images\items_lg\force_staff.png" />
+    <Content Include="public\images\items_lg\gauntlets.png" />
+    <Content Include="public\images\items_lg\gem.png" />
+    <Content Include="public\images\items_lg\ghost.png" />
+    <Content Include="public\images\items_lg\glimmer_cape.png" />
+    <Content Include="public\images\items_lg\gloves.png" />
+    <Content Include="public\images\items_lg\greater_crit.png" />
+    <Content Include="public\images\items_lg\guardian_greaves.png" />
+    <Content Include="public\images\items_lg\hand_of_midas.png" />
+    <Content Include="public\images\items_lg\headdress.png" />
+    <Content Include="public\images\items_lg\heart.png" />
+    <Content Include="public\images\items_lg\heavens_halberd.png" />
+    <Content Include="public\images\items_lg\helm_of_iron_will.png" />
+    <Content Include="public\images\items_lg\helm_of_the_dominator.png" />
+    <Content Include="public\images\items_lg\hood_of_defiance.png" />
+    <Content Include="public\images\items_lg\hurricane_pike.png" />
+    <Content Include="public\images\items_lg\hyperstone.png" />
+    <Content Include="public\images\items_lg\infused_raindrop.png" />
+    <Content Include="public\images\items_lg\invis_sword.png" />
+    <Content Include="public\images\items_lg\iron_talon.png" />
+    <Content Include="public\images\items_lg\javelin.png" />
+    <Content Include="public\images\items_lg\lesser_crit.png" />
+    <Content Include="public\images\items_lg\lifesteal.png" />
+    <Content Include="public\images\items_lg\lotus_orb.png" />
+    <Content Include="public\images\items_lg\maelstrom.png" />
+    <Content Include="public\images\items_lg\magic_stick.png" />
+    <Content Include="public\images\items_lg\magic_wand.png" />
+    <Content Include="public\images\items_lg\manta.png" />
+    <Content Include="public\images\items_lg\mantle.png" />
+    <Content Include="public\images\items_lg\mask_of_madness.png" />
+    <Content Include="public\images\items_lg\medallion_of_courage.png" />
+    <Content Include="public\images\items_lg\mekansm.png" />
+    <Content Include="public\images\items_lg\mithril_hammer.png" />
+    <Content Include="public\images\items_lg\mjollnir.png" />
+    <Content Include="public\images\items_lg\monkey_king_bar.png" />
+    <Content Include="public\images\items_lg\moon_shard.png" />
+    <Content Include="public\images\items_lg\mystic_staff.png" />
+    <Content Include="public\images\items_lg\necronomicon.png" />
+    <Content Include="public\images\items_lg\necronomicon_2.png" />
+    <Content Include="public\images\items_lg\necronomicon_3.png" />
+    <Content Include="public\images\items_lg\null_talisman.png" />
+    <Content Include="public\images\items_lg\oblivion_staff.png" />
+    <Content Include="public\images\items_lg\octarine_core.png" />
+    <Content Include="public\images\items_lg\ogre_axe.png" />
+    <Content Include="public\images\items_lg\orb_of_venom.png" />
+    <Content Include="public\images\items_lg\orchid.png" />
+    <Content Include="public\images\items_lg\pers.png" />
+    <Content Include="public\images\items_lg\phase_boots.png" />
+    <Content Include="public\images\items_lg\pipe.png" />
+    <Content Include="public\images\items_lg\platemail.png" />
+    <Content Include="public\images\items_lg\point_booster.png" />
+    <Content Include="public\images\items_lg\poor_mans_shield.png" />
+    <Content Include="public\images\items_lg\power_treads.png" />
+    <Content Include="public\images\items_lg\quarterstaff.png" />
+    <Content Include="public\images\items_lg\quelling_blade.png" />
+    <Content Include="public\images\items_lg\radiance.png" />
+    <Content Include="public\images\items_lg\rapier.png" />
+    <Content Include="public\images\items_lg\reaver.png" />
+    <Content Include="public\images\items_lg\recipe_abyssal_blade.png" />
+    <Content Include="public\images\items_lg\recipe_ancient_janggo.png" />
+    <Content Include="public\images\items_lg\recipe_arcane_boots.png" />
+    <Content Include="public\images\items_lg\recipe_armlet.png" />
+    <Content Include="public\images\items_lg\recipe_assault.png" />
+    <Content Include="public\images\items_lg\recipe_basher.png" />
+    <Content Include="public\images\items_lg\recipe_bfury.png" />
+    <Content Include="public\images\items_lg\recipe_black_king_bar.png" />
+    <Content Include="public\images\items_lg\recipe_blade_mail.png" />
+    <Content Include="public\images\items_lg\recipe_bloodstone.png" />
+    <Content Include="public\images\items_lg\recipe_bracer.png" />
+    <Content Include="public\images\items_lg\recipe_buckler.png" />
+    <Content Include="public\images\items_lg\recipe_butterfly.png" />
+    <Content Include="public\images\items_lg\recipe_cyclone.png" />
+    <Content Include="public\images\items_lg\recipe_dagon.png" />
+    <Content Include="public\images\items_lg\recipe_dagon_2.png" />
+    <Content Include="public\images\items_lg\recipe_dagon_3.png" />
+    <Content Include="public\images\items_lg\recipe_dagon_4.png" />
+    <Content Include="public\images\items_lg\recipe_dagon_5.png" />
+    <Content Include="public\images\items_lg\recipe_desolator.png" />
+    <Content Include="public\images\items_lg\recipe_diffusal_blade.png" />
+    <Content Include="public\images\items_lg\recipe_diffusal_blade_2.png" />
+    <Content Include="public\images\items_lg\recipe_ethereal_blade.png" />
+    <Content Include="public\images\items_lg\recipe_force_staff.png" />
+    <Content Include="public\images\items_lg\recipe_greater_crit.png" />
+    <Content Include="public\images\items_lg\recipe_hand_of_midas.png" />
+    <Content Include="public\images\items_lg\recipe_headdress.png" />
+    <Content Include="public\images\items_lg\recipe_heart.png" />
+    <Content Include="public\images\items_lg\recipe_heavens_halberd.png" />
+    <Content Include="public\images\items_lg\recipe_helm_of_the_dominator.png" />
+    <Content Include="public\images\items_lg\recipe_hood_of_defiance.png" />
+    <Content Include="public\images\items_lg\recipe_invis_sword.png" />
+    <Content Include="public\images\items_lg\recipe_lesser_crit.png" />
+    <Content Include="public\images\items_lg\recipe_maelstrom.png" />
+    <Content Include="public\images\items_lg\recipe_magic_wand.png" />
+    <Content Include="public\images\items_lg\recipe_manta.png" />
+    <Content Include="public\images\items_lg\recipe_mask_of_madness.png" />
+    <Content Include="public\images\items_lg\recipe_medallion_of_courage.png" />
+    <Content Include="public\images\items_lg\recipe_mekansm.png" />
+    <Content Include="public\images\items_lg\recipe_mjollnir.png" />
+    <Content Include="public\images\items_lg\recipe_monkey_king_bar.png" />
+    <Content Include="public\images\items_lg\recipe_necronomicon.png" />
+    <Content Include="public\images\items_lg\recipe_necronomicon_2.png" />
+    <Content Include="public\images\items_lg\recipe_necronomicon_3.png" />
+    <Content Include="public\images\items_lg\recipe_null_talisman.png" />
+    <Content Include="public\images\items_lg\recipe_oblivion_staff.png" />
+    <Content Include="public\images\items_lg\recipe_orchid.png" />
+    <Content Include="public\images\items_lg\recipe_pers.png" />
+    <Content Include="public\images\items_lg\recipe_phase_boots.png" />
+    <Content Include="public\images\items_lg\recipe_pipe.png" />
+    <Content Include="public\images\items_lg\recipe_poor_mans_shield.png" />
+    <Content Include="public\images\items_lg\recipe_power_treads.png" />
+    <Content Include="public\images\items_lg\recipe_radiance.png" />
+    <Content Include="public\images\items_lg\recipe_rapier.png" />
+    <Content Include="public\images\items_lg\recipe_refresher.png" />
+    <Content Include="public\images\items_lg\recipe_ring_of_aquila.png" />
+    <Content Include="public\images\items_lg\recipe_ring_of_basilius.png" />
+    <Content Include="public\images\items_lg\recipe_rod_of_atos.png" />
+    <Content Include="public\images\items_lg\recipe_sange.png" />
+    <Content Include="public\images\items_lg\recipe_sange_and_yasha.png" />
+    <Content Include="public\images\items_lg\recipe_satanic.png" />
+    <Content Include="public\images\items_lg\recipe_sheepstick.png" />
+    <Content Include="public\images\items_lg\recipe_shivas_guard.png" />
+    <Content Include="public\images\items_lg\recipe_skadi.png" />
+    <Content Include="public\images\items_lg\recipe_soul_booster.png" />
+    <Content Include="public\images\items_lg\recipe_soul_ring.png" />
+    <Content Include="public\images\items_lg\recipe_sphere.png" />
+    <Content Include="public\images\items_lg\recipe_tranquil_boots.png" />
+    <Content Include="public\images\items_lg\recipe_travel_boots.png" />
+    <Content Include="public\images\items_lg\recipe_ultimate_scepter.png" />
+    <Content Include="public\images\items_lg\recipe_urn_of_shadows.png" />
+    <Content Include="public\images\items_lg\recipe_vanguard.png" />
+    <Content Include="public\images\items_lg\recipe_veil_of_discord.png" />
+    <Content Include="public\images\items_lg\recipe_vladmir.png" />
+    <Content Include="public\images\items_lg\recipe_wraith_band.png" />
+    <Content Include="public\images\items_lg\recipe_yasha.png" />
+    <Content Include="public\images\items_lg\refresher.png" />
+    <Content Include="public\images\items_lg\relic.png" />
+    <Content Include="public\images\items_lg\ring_of_aquila.png" />
+    <Content Include="public\images\items_lg\ring_of_basilius.png" />
+    <Content Include="public\images\items_lg\ring_of_health.png" />
+    <Content Include="public\images\items_lg\ring_of_protection.png" />
+    <Content Include="public\images\items_lg\ring_of_regen.png" />
+    <Content Include="public\images\items_lg\robe.png" />
+    <Content Include="public\images\items_lg\rod_of_atos.png" />
+    <Content Include="public\images\items_lg\sange.png" />
+    <Content Include="public\images\items_lg\sange_and_yasha.png" />
+    <Content Include="public\images\items_lg\satanic.png" />
+    <Content Include="public\images\items_lg\shadow_amulet.png" />
+    <Content Include="public\images\items_lg\sheepstick.png" />
+    <Content Include="public\images\items_lg\shivas_guard.png" />
+    <Content Include="public\images\items_lg\silver_edge.png" />
+    <Content Include="public\images\items_lg\skadi.png" />
+    <Content Include="public\images\items_lg\slippers.png" />
+    <Content Include="public\images\items_lg\smoke_of_deceit.png" />
+    <Content Include="public\images\items_lg\sobi_mask.png" />
+    <Content Include="public\images\items_lg\solar_crest.png" />
+    <Content Include="public\images\items_lg\soul_booster.png" />
+    <Content Include="public\images\items_lg\soul_ring.png" />
+    <Content Include="public\images\items_lg\sphere.png" />
+    <Content Include="public\images\items_lg\staff_of_wizardry.png" />
+    <Content Include="public\images\items_lg\stout_shield.png" />
+    <Content Include="public\images\items_lg\talisman_of_evasion.png" />
+    <Content Include="public\images\items_lg\tango.png" />
+    <Content Include="public\images\items_lg\tango_single.png" />
+    <Content Include="public\images\items_lg\tome_of_knowledge.png" />
+    <Content Include="public\images\items_lg\tpscroll.png" />
+    <Content Include="public\images\items_lg\tranquil_boots.png" />
+    <Content Include="public\images\items_lg\travel_boots.png" />
+    <Content Include="public\images\items_lg\travel_boots_2.png" />
+    <Content Include="public\images\items_lg\ultimate_orb.png" />
+    <Content Include="public\images\items_lg\ultimate_scepter.png" />
+    <Content Include="public\images\items_lg\urn_of_shadows.png" />
+    <Content Include="public\images\items_lg\vanguard.png" />
+    <Content Include="public\images\items_lg\veil_of_discord.png" />
+    <Content Include="public\images\items_lg\vitality_booster.png" />
+    <Content Include="public\images\items_lg\vladmir.png" />
+    <Content Include="public\images\items_lg\void_stone.png" />
+    <Content Include="public\images\items_lg\ward_dispenser.png" />
+    <Content Include="public\images\items_lg\ward_observer.png" />
+    <Content Include="public\images\items_lg\ward_sentry.png" />
+    <Content Include="public\images\items_lg\wind_lace.png" />
+    <Content Include="public\images\items_lg\wraith_band.png" />
+    <Content Include="public\images\items_lg\yasha.png" />
+    <Content Include="styles.css" />
+    <Content Include="systemjs.config.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.routing.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero-details.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero-details.models.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero-details.module.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero-details.service.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\bestversus\bestversus.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\hero.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\items\items.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\kda\kda.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\lhdeny\lhdeny.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\matches\matches.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\permin\permin.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\winrate\winrate.component.ts" />
+    <TypeScriptCompile Include="app\hero-details\hero\worstversus\worstversus.component.ts" />
+    <TypeScriptCompile Include="app\heroes\heroes.component.ts" />
+    <TypeScriptCompile Include="app\heroes\heroes.models.ts" />
+    <TypeScriptCompile Include="app\heroes\heroes.service.ts" />
+    <TypeScriptCompile Include="app\loading-indicator\loading-indicator.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49863</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57111/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

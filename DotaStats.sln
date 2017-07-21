@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.Model", "DotaStats.Model\DotaStats.Model.csproj", "{4BC03E03-30C5-4620-84D4-5327471E8078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.Repository", "DotaStats.Repository\DotaStats.Repository.csproj", "{BDF2604E-25AB-48E0-9723-A068134849B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.Core", "DotaStats.Core\DotaStats.Core.csproj", "{2E1933B1-7958-416B-8758-4553133B8541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.API", "DotaStats.API\DotaStats.API.csproj", "{00D33C4C-EC1E-4B58-97F6-EF72D9D52F16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.Services", "DotaStats.Services\DotaStats.Services.csproj", "{0E7D4EBB-506B-4D12-A6CE-88088AB64920}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.ConsoleApp", "DotaStats.ConsoleApp\DotaStats.ConsoleApp.csproj", "{EB325102-2FB9-4ED0-8305-F4BC137F64A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.Web", "DotaStats.Web\DotaStats.Web.csproj", "{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BC03E03-30C5-4620-84D4-5327471E8078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC03E03-30C5-4620-84D4-5327471E8078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC03E03-30C5-4620-84D4-5327471E8078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC03E03-30C5-4620-84D4-5327471E8078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF2604E-25AB-48E0-9723-A068134849B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF2604E-25AB-48E0-9723-A068134849B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF2604E-25AB-48E0-9723-A068134849B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF2604E-25AB-48E0-9723-A068134849B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E1933B1-7958-416B-8758-4553133B8541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E1933B1-7958-416B-8758-4553133B8541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E1933B1-7958-416B-8758-4553133B8541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E1933B1-7958-416B-8758-4553133B8541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D33C4C-EC1E-4B58-97F6-EF72D9D52F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D33C4C-EC1E-4B58-97F6-EF72D9D52F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D33C4C-EC1E-4B58-97F6-EF72D9D52F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D33C4C-EC1E-4B58-97F6-EF72D9D52F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7D4EBB-506B-4D12-A6CE-88088AB64920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7D4EBB-506B-4D12-A6CE-88088AB64920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7D4EBB-506B-4D12-A6CE-88088AB64920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7D4EBB-506B-4D12-A6CE-88088AB64920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB325102-2FB9-4ED0-8305-F4BC137F64A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB325102-2FB9-4ED0-8305-F4BC137F64A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB325102-2FB9-4ED0-8305-F4BC137F64A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB325102-2FB9-4ED0-8305-F4BC137F64A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8
+	EndGlobalSection
+EndGlobal

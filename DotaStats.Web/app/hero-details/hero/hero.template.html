@@ -1,0 +1,20 @@
+﻿<div id="hero-div">
+    <div class="col-1">
+        <div id="name-div">{{currentHero.localized_name}}</div>
+        <div id="image-div">
+            <img *ngIf="currentHero" [src]="heroImgSrc" alt="{{currentHero.localized_name}}"/>
+        </div>
+        <kda *ngIf="currentHero" [currentHero]="currentHero"></kda>
+        <winrate *ngIf="currentHero" [currentHero]="currentHero"></winrate>
+        <mostuseditems *ngIf="currentHero" [currentHero]="currentHero"></mostuseditems>
+    </div>
+    <div class="col-2">
+        <matchdetails *ngIf="currentHero" [currentHero]="currentHero"></matchdetails>
+    </div>
+    <div class="col-3">
+        <permin *ngIf="currentHero" [currentHero]="currentHero"></permin>
+        <lhdeny *ngIf="currentHero" [currentHero]="currentHero"></lhdeny>
+        <bestversus *ngIf="currentHero" [currentHero]="currentHero"></bestversus>
+        <worstversus *ngIf="currentHero" [currentHero]="currentHero"></worstversus>
+    </div>
+</div>

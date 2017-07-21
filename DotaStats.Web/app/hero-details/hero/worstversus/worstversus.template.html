@@ -1,0 +1,19 @@
+﻿<div [ngSwitch]="loading">
+    <div *ngSwitchCase="false">
+        <!------------------------------------------->
+        <div id="worstversus-div" *ngIf="worstVersus">
+            <div class="header-div"><u>Worst Versus</u></div>
+            <div class="row-div" *ngFor="let wv of worstVersus">
+                <div class="col-1">
+                    <img src="/public/images/heroes_lg/{{wv.name}}.png" />
+                </div>
+                <div class="col-2">{{wv.localized_name}}</div>
+                <div class="col-3">{{wv.count}}</div>
+            </div>
+        </div>
+        <!------------------------------------------->
+    </div>
+    <div *ngSwitchCase="true">
+        <loading-indicator></loading-indicator>
+    </div>
+</div>

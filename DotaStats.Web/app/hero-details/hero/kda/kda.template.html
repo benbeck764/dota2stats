@@ -1,0 +1,21 @@
+﻿<div [ngSwitch]="loading">
+    <div *ngSwitchCase="false">
+        <!------------------------------------------->
+        <div id="kda-div" *ngIf="kda">
+            <div class="row">
+                <div class="col-sm-4">Kills</div>
+                <div class="col-sm-4">Deaths</div>
+                <div class="col-sm-4">Assists</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">{{kda.kills}}</div>
+                <div class="col-sm-4">{{kda.deaths}}</div>
+                <div class="col-sm-4">{{kda.assists}}</div>
+            </div>
+        </div>
+        <!------------------------------------------->
+    </div>
+    <div *ngSwitchCase="true">
+        <loading-indicator></loading-indicator>
+    </div>
+</div>

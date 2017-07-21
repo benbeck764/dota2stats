@@ -1,0 +1,36 @@
+﻿<div [ngSwitch]="loading">
+    <div *ngSwitchCase="false">
+        <!------------------------------------------->
+        <div id="matches-div">
+            <div id="header-div">Match Details</div>
+            <div class="row row-div">
+                <div class="col-1"><u>Results</u></div>
+                <div class="col-2"><u>Game Mode</u></div>
+                <div class="col-3"><u>K/D/A</u></div>
+                <div class="col-4"><u>Duration</u></div>
+                <div class="col-5-h"><u>Items</u></div>
+                <!--<div class="col-lg-4"><u>Abilities</u></div>-->
+            </div>
+            <div id="matches-div-inner">
+                <div class="row row-div" *ngFor="let detail of details">
+                    <div class="col-1">{{detail.results}}</div>
+                    <div class="col-2">{{detail.mode}}</div>
+                    <div class="col-3">{{detail.kda}}</div>
+                    <div class="col-4">{{detail.duration}}</div>
+                    <div id="img-div" class="col-5" *ngFor="let item of detail.items">
+                        <img src="/public/images/items_lg/{{item.name}}.png" />
+                    </div>
+                    <!--<div *ngIf="detail.abilities.length > 0" id="abilities-div" class="col-lg-4">
+                        <div class="abilities-img-div" *ngFor="#ability of detail.abilities">
+                            <img src="/public/images/abilities_lg/{{ability.image_name}}.png"/>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------->
+    </div>
+    <div *ngSwitchCase="true">
+        <loading-indicator></loading-indicator>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿<div [ngSwitch]="loading">
+    <div *ngSwitchCase="false">
+        <!------------------------------------------->
+        <div id="most-used-items-div">
+            <div id="header-div">
+                <div class="row">
+                    <div class="col-sm-6">Item</div>
+                    <div class="col-sm-6">Times Used</div>
+                </div>
+            </div>
+    
+            <div id="most-used-items-div-inner">
+                <div class="row" *ngFor="let item of mostUsed">
+                    <div class="col-sm-3 row-div">
+                        <img src="/public/images/items_lg/{{item.name}}.png"/>
+                    </div>
+                    <div class="col-sm-5 row-div">{{item.localized_name}}</div>
+                    <div class="col-sm-3 row-div">{{item.count}}</div>
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------->
+    </div>
+    <div *ngSwitchCase="true">
+        <loading-indicator></loading-indicator>
+    </div>
+</div>

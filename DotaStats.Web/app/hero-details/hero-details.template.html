@@ -1,0 +1,17 @@
+﻿<div id="heroes-div">
+    <div id="ng-nav-sidebar-wrapper">
+        <ul id="ng-nav-sidebar-buttons">
+            <li *ngFor="let hero of heroes" (click)="selectHero(hero.hero_id)">
+                <div class="logo">
+                    <img src="/public/images/heroes_lg/{{hero.name}}.png"/>
+                </div>
+                <div class="ng-nav-sidebar-label">
+                    <span>{{hero.localized_name}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="hero-div">
+    <hero *ngIf="currentHero" [currentHero]="currentHero"></hero>
+</div>
