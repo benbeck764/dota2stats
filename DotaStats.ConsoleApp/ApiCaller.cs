@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Mime;
 using System.Threading.Tasks;
 using DotaStats.Core.Configuration;
 using DotaStats.Model.Dota2API.Hero;

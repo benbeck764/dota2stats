@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using DotaStats.ConsoleApp;
 using DotaStats.Model.Dota2API.MatchDetails;
 using DotaStats.Model.Dota2API.MatchHistory;
 using DotaStats.Model.Extensions;
 using DotaStats.Services;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
-using Microsoft.SqlServer.Server;
 using Newtonsoft.Json;
 
 namespace DotaStats.WebJob

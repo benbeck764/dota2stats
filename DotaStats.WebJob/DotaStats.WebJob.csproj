@@ -85,8 +85,8 @@
       <HintPath>..\packages\ncrontab.3.3.0\lib\net35\NCrontab.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -111,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HttpManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,10 +124,6 @@
     <None Include="Properties\webjob-publish-settings.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DotaStats.ConsoleApp\DotaStats.ConsoleApp.csproj">
-      <Project>{EB325102-2FB9-4ED0-8305-F4BC137F64A0}</Project>
-      <Name>DotaStats.ConsoleApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DotaStats.Core\DotaStats.Core.csproj">
       <Project>{2E1933B1-7958-416B-8758-4553133B8541}</Project>
       <Name>DotaStats.Core</Name>

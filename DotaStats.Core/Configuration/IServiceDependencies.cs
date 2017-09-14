@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DotaStats.Core.Configuration.Implementation;
+﻿using DotaStats.Core.Configuration.Implementation;
 
 namespace DotaStats.Core.Configuration
 {

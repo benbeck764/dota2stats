@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using DotaStats.Model.API;
 using DotaStats.Model.Dota2API.MatchDetails;
 using DotaStats.Model.Dota2API.MatchHistory;
 using DotaStats.Model.Persistence;

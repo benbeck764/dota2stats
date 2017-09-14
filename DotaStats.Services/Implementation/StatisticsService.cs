@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DotaStats.Core.SharedData;
-using DotaStats.Model;
 using DotaStats.Model.API;
 using DotaStats.Model.Enums;
 using DotaStats.Model.Persistence;

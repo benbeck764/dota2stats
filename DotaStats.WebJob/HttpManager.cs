@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace DotaStats.ConsoleApp
+namespace DotaStats.WebJob
 {
     public static class HttpManager
     {
         static HttpManager()
         {
-                
+
         }
 
         public static async Task<HttpResponseMessage> SendRequest(HttpRequestMessage request)
