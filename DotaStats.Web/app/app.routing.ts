@@ -1,14 +1,14 @@
 ﻿import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { Dashboard } from './dashboard/dashboard.component'
 import { HeroDetailsComponent } from "./hero-details/hero-details.component";
 import { HeroesComponent } from "./heroes/heroes.component";
+import { AppComponent } from "./app.component";
 
 const appRoutes: Routes = [
     {
         path: '',
-        component: Dashboard
+        component: AppComponent
     },
     {
         path: 'heroes',
@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     },
     {
         path: '**',  // otherwise route.
-        component: Dashboard
+        component: AppComponent
     }
 ];
 

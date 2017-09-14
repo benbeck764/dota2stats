@@ -7,6 +7,7 @@ using DotaStats.Model.Extensions;
 using DotaStats.Services;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
+using Microsoft.WindowsAzure;
 using Newtonsoft.Json;
 
 namespace DotaStats.WebJob
@@ -21,11 +22,7 @@ namespace DotaStats.WebJob
 
         private string MatchHistoryUri { get; } = "https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v001/";
         private string MatchDetailsUri { get; } = "https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/v001/";
-        private string HeroesInfoUri { get; } = "https://api.steampowered.com/IEconDOTA2_570/GetHeroes/v1/";
-        private string ItemsInfoUri { get; } = "http://api.steampowered.com/IEconDOTA2_570/GetGameItems/v1";
-
-        private string HeroImagesUri { get; } = "http://cdn.dota2.com/apps/dota2/images/heroes/";
-        private string ItemImagesUri { get; } = "http://cdn.dota2.com/apps/dota2/images/items/";
+    
 #if DEBUG
         /// <summary>
         /// Runs every minute
@@ -80,7 +77,11 @@ namespace DotaStats.WebJob
 
                     var startTime = DateTimeOffset.FromUnixTimeSeconds(matchDetailsResult.Result.StartTime).DateTime;
                     var today = DateTime.Today;
-                    if ((today - startTime).Days <= 7)
+
+                    var outDays = 7;
+                    int.TryParse(CloudConfigurationManager.GetSetting("MatchHistoryCheckDays"), out outDays);
+
+                    if ((today - startTime).Days <= outDays)
                     {
                         Console.WriteLine("Found a new match!");
                         Console.WriteLine(matchDetailsResult.ToJson());
