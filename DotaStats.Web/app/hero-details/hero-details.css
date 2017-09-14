@@ -1,7 +1,7 @@
 ﻿/** GENERAL FORMATTING **/
 #hero-div {
     margin-left: 325px;
-    width: 1500px;
+    width: 100% !important;
     height: 500px;
     display: inline-block;
     margin-top: 50px;

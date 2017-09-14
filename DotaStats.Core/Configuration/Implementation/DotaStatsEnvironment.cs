@@ -11,6 +11,7 @@ namespace DotaStats.Core.Configuration.Implementation
     {
         public ServiceDependencies ServiceDependencies { get; set; }
         public string StorageConnectionString { get; set; }
+        public string BlobStorageConnectionString { get; set; }
         public LoggerConfiguration LoggerConfiguration { get; set; }
     }
 }

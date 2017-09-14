@@ -17,6 +17,7 @@ namespace DotaStats.Core.Configuration
     public static class DotaStatsApplication
     {
         private static readonly string StorageConnectionString = ConfigurationManager.AppSettings["ds:StorageConnectionString"];
+        private static readonly string BlobStorageConnectionString = ConfigurationManager.AppSettings["ds:BlobStorageConnectionString"];
 
         public static DotaStatsEnvironment Environment { get; private set; } = null;
 
@@ -91,7 +92,8 @@ namespace DotaStats.Core.Configuration
                         }
                     }
                 },
-                StorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=benstestblobstorage;AccountKey=r3W1xQk0qgqDHiIfslhT6NWONS0pi2kRwkCTNRRB+Yt+aqw5ZmTC5VgHBH6zjbhemUJsBjs9+d3HBaij7jZ09w==;EndpointSuffix=core.windows.net"
+                BlobStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=benstestblobstorage;AccountKey=r3W1xQk0qgqDHiIfslhT6NWONS0pi2kRwkCTNRRB+Yt+aqw5ZmTC5VgHBH6zjbhemUJsBjs9+d3HBaij7jZ09w==;EndpointSuffix=core.windows.net",
+                StorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=bensteststorage;AccountKey=jiKEKx56bBBt4bh1NHPcgjrv4Y++heckjVXNIj1uCx+KsJcm4vjh65fIwbAgLDJIoNHJ5yGsVYQD7jbL2vJJbw==;EndpointSuffix=core.windows.net"
             };
         }
 
@@ -117,7 +119,7 @@ namespace DotaStats.Core.Configuration
 
         static CloudBlobContainer GetBlobContainer()
         {
-            if (string.IsNullOrWhiteSpace(StorageConnectionString))
+            if (string.IsNullOrWhiteSpace(BlobStorageConnectionString))
             {
                 throw new ArgumentException("A ds:StorageConnectionString AppSetting must be set to initialize the configuration.");
             }

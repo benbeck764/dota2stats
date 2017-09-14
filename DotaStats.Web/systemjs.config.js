@@ -6,24 +6,25 @@
     System.config({
         paths: {
             // paths serve as alias
-            'npm:': 'node_modules/'
+            'npm:': 'node_modules/',
+            'lib:': 'lib/'
         },
         // map tells the System loader where to look for things
         map: {
             // our app is within the app folder
             app: 'app',
             // angular bundles
-            '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-            '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-            '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-            '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-            '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-            '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-            '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-            '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+            '@angular/core': 'lib:@angular/core/bundles/core.umd.js',
+            '@angular/common': 'lib:@angular/common/bundles/common.umd.js',
+            '@angular/compiler': 'lib:@angular/compiler/bundles/compiler.umd.js',
+            '@angular/platform-browser': 'lib:@angular/platform-browser/bundles/platform-browser.umd.js',
+            '@angular/platform-browser-dynamic': 'lib:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+            '@angular/http': 'lib:@angular/http/bundles/http.umd.js',
+            '@angular/router': 'lib:@angular/router/bundles/router.umd.js',
+            '@angular/forms': 'lib:@angular/forms/bundles/forms.umd.js',
             // other libraries
-            'rxjs': 'npm:rxjs',
-            'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+            'rxjs': 'lib:rxjs',
+            'angular-in-memory-web-api': 'lib:angular-in-memory-web-api'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -34,7 +35,7 @@
             rxjs: {
                 defaultExtension: 'js'
             },
-            'angular2-in-memory-web-api': {
+            'angular-in-memory-web-api': {
                 main: './index.js',
                 defaultExtension: 'js'
             }

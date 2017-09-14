@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.ConsoleApp", "Dot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.Web", "DotaStats.Web\DotaStats.Web.csproj", "{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaStats.WebJob", "DotaStats.WebJob\DotaStats.WebJob.csproj", "{5835333C-28DD-4445-9EBE-D7A0E0D943F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB7BA59A-E9E5-4FA9-BF5C-8867BCE3EA57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5835333C-28DD-4445-9EBE-D7A0E0D943F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5835333C-28DD-4445-9EBE-D7A0E0D943F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5835333C-28DD-4445-9EBE-D7A0E0D943F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5835333C-28DD-4445-9EBE-D7A0E0D943F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

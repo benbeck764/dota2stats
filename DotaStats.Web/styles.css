@@ -5,6 +5,6 @@
     right: 0;
     top: 0;
     height: 125%;
-    background: transparent url("public/images/background.jpg");
+    background: transparent url("../public/images/background.jpg");
     background-size: cover;
 }

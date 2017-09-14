@@ -96,7 +96,7 @@ namespace DotaStats.Services.Implementation
         public IEnumerable<MatchDetail> GetMatchDetails(long accountId, int heroId)
         {
             var retList = new List<MatchDetail>();
-            var matches = GetMatchesByAccountAndHero(accountId, heroId);
+            var matches = GetMatchesByAccountAndHero(accountId, heroId).OrderByDescending(m => m.StartTime);
             foreach (var match in matches)
             {
                 var matchDetail = new MatchDetail();

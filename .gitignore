@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+# Angular App
+DotaStats.Web/wwwroot
+DotaStats.Web/app/**/*.js
+DotaStats.Web/app/**/*.map
+
 # User-specific files
 *.suo
 *.user
