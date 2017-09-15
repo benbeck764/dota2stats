@@ -8,22 +8,23 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 
 import { Hero, KDA, WinRate, MostUsedItems, MatchDetails, PerMin, LastHitsDenies, BestVersus, WorstVersus } from './hero-details.models';
+import { Config } from '../config';
 
 @Injectable()
 export class HeroesService {
 
     private accountId = 111871881;
-    private heroesUrl = "http://localhost:58064/api/heroes/all";
-    private kdaUrl = "http://localhost:58064/api/statistics/kda";
-    private winRateUrl = "http://localhost:58064/api/statistics/winrate";
-    private mostUsedItemsUrl = "http://localhost:58064/api/statistics/mostused";
-    private matchDetailsUrl = "http://localhost:58064/api/statistics/matches";
-    private perMinUrl = "http://localhost:58064/api/statistics/permin";
-    private lastHitsDeniesUrl = "http://localhost:58064/api/statistics/lhdeny";
-    private bestVersusUrl = "http://localhost:58064/api/statistics/bestversus";
-    private worstVersusUrl = "http://localhost:58064/api/statistics/worstversus";
+    private heroesUrl = this._config.get("apiBaseUrl") + "heroes/all";
+    private kdaUrl = this._config.get("apiBaseUrl") + "statistics/kda";
+    private winRateUrl = this._config.get("apiBaseUrl") + "/statistics/winrate";
+    private mostUsedItemsUrl = this._config.get("apiBaseUrl") + "statistics/mostused";
+    private matchDetailsUrl = this._config.get("apiBaseUrl") + "statistics/matches";
+    private perMinUrl = this._config.get("apiBaseUrl") + "statistics/permin";
+    private lastHitsDeniesUrl = this._config.get("apiBaseUrl") + "statistics/lhdeny";
+    private bestVersusUrl = this._config.get("apiBaseUrl") + "statistics/bestversus";
+    private worstVersusUrl = this._config.get("apiBaseUrl") + "statistics/worstversus";
 
-    constructor(private _http: Http) { }
+    constructor(private _http: Http, private _config: Config) { }
 
     getHeroes(): Observable<Hero[]> {
         return this._http.get(this.heroesUrl)

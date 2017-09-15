@@ -125,6 +125,7 @@
     <Content Include="wwwroot\app\app.component.template.html" />
     <Content Include="wwwroot\app\app.module.js" />
     <Content Include="wwwroot\app\app.routing.js" />
+    <Content Include="wwwroot\app\config.js" />
     <Content Include="wwwroot\app\dashboard\dashboard.component.js" />
     <Content Include="wwwroot\app\dashboard\dashboard.component.template.html" />
     <Content Include="wwwroot\app\hero-details\hero-details.component.js" />
@@ -1077,6 +1078,8 @@
     <Content Include="wwwroot\public\images\items_lg\wraith_band.png" />
     <Content Include="wwwroot\public\images\items_lg\yasha.png" />
     <Content Include="wwwroot\systemjs.config.js" />
+    <Content Include="config\env.development.json" />
+    <Content Include="config\env.production.json" />
     <None Include="Properties\PublishProfiles\dota2stats - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\dota2stats - Web Deploy.pubxml" />
     <Content Include="tsconfig.json" />
@@ -1112,6 +1115,9 @@
     <Content Include="wwwroot\css\bootstrap\dist\css\bootstrap-theme.min.css.map" />
     <Content Include="wwwroot\css\bootstrap\dist\css\bootstrap.css.map" />
     <Content Include="wwwroot\css\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="wwwroot\app\config.js.map" />
+    <Content Include="wwwroot\config\env.development.json" />
+    <Content Include="wwwroot\config\env.production.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="gulpfile.js" />
@@ -1612,9 +1618,11 @@
     <TypeScriptCompile Include="app\heroes\heroes.service.ts" />
     <TypeScriptCompile Include="app\loading-indicator\loading-indicator.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\config.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.routing.ts" />
+    <TypeScriptCompile Include="wwwroot\app\config.ts" />
     <TypeScriptCompile Include="wwwroot\app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\hero-details\hero-details.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\hero-details\hero-details.models.ts" />

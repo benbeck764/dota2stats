@@ -7,15 +7,16 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 
-import {HeroRecord} from "./heroes.models";
+import { HeroRecord } from "./heroes.models";
+import { Config } from '../config';
 
 @Injectable()
 export class HeroRecordsService {
 
     private accountId = 111871881;
-    private heroRecordsUrl = "http://localhost:58064/api/herorecords/all";
+    private heroRecordsUrl = this._config.get("apiBaseUrl") + "herorecords/all";
 
-    constructor(private _http: Http) { }
+    constructor(private _http: Http, private _config: Config) { }
 
     getHeroRecords(): Observable<HeroRecord[]> {
         return this._http.get(this.heroRecordsUrl + "?accountId=" + this.accountId)

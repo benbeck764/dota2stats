@@ -107,6 +107,11 @@ gulp.task("copy:systemJsConfig", function () {
         .pipe(gulp.dest(config.systemJsConfigDest));
 });
 
+gulp.task("copy:envConfig", function () {
+    return gulp.src(config.config)
+        .pipe(gulp.dest(config.configDest));
+});
+
 gulp.task("dependencies", [
     "copy:angular",
     "copy:angularWebApi",
@@ -120,7 +125,8 @@ gulp.task("dependencies", [
     "copy:indexHtml",
     "copy:public",
     "copy:styles",
-    "copy:systemJsConfig"
+    "copy:systemJsConfig",
+    "copy:envConfig"
 ]);
 
 gulp.task("watch", function () {

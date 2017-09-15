@@ -12,6 +12,8 @@
         angular: base.node_modules + "@angular/**/*.js",
         app: "App/**/*.*",
         appDest: base.webroot + "app",
+        config: "config/**/*.*",
+        configDest: base.webroot + "config",
         js: base.webroot + "js/*.js",
         jsDest: base.webroot + 'js',
         css: base.webroot + "css/*.css",
