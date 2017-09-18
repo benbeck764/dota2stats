@@ -1,9 +1,28 @@
 ﻿#hero-records-div {
-    width: 1500px;
+    width: 100%;
     display: inline-block;
     margin-top: 50px;
     position: fixed !important;
     margin-top: 55px !important;
     overflow-y: auto !important;
     height: 100% !important;
+}
+
+#heroes-table {
+    background-color: #000000 !important;
+    background-color: rgba(27, 27, 27, 0.85) !important;
+    color: rgb(123, 0, 0) !important;
+}
+
+#hero-img {
+    height: 50px !important;
+    width: 75px !important;
+}
+
+#heroes-table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+#heroes-table > thead > tr > th {
+    vertical-align: middle;
 }

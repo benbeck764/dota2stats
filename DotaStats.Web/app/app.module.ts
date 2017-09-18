@@ -10,12 +10,15 @@ import { Dashboard } from './dashboard/dashboard.component'
 import { routing } from './app.routing';
 import { Config } from './config';
 
+// Third Party
+//import { DataTableModule } from 'angular-4-data-table';
+
 export function configLoader(config: Config): any {
     return () => config.load('development');
 }
 
 @NgModule({
-    imports: [BrowserModule, routing, HttpModule, HeroDetailsModule],
+    imports: [BrowserModule, routing, HttpModule, HeroDetailsModule/*, DataTableModule*/],
     declarations: [AppComponent, Dashboard, HeroesComponent],
     providers: [
         Config,

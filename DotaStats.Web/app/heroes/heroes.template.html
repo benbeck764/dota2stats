@@ -1,22 +1,45 @@
 ﻿<div id="hero-records-div">
-    <table class="table table-condensed">
+    <table id="heroes-table" class="table table-condensed">
         <thead>
         <tr>
             <th>Hero</th>
-            <th></th>
+
             <th>Total Games</th>
             <th>Wins</th>
             <th>Losses</th>
+            
+            <th>Win Rate</th>
+            <th>Best Win Streak</th>
+            <th>Current Win Streak</th>
+            
+            <th>Avg. Kills</th>
+            <th>Avg. Deaths</th>
+            <th>Avg. Assists</th>
+            <th>Avg. GPM</th>
+            <th>Avg. XPM</th>
         </tr>
         </thead>
         <tbody>
         <ng-template ngFor let-heroRecord [ngForOf]="heroRecords">
             <tr>
-                <td><img src="/public/images/heroes_lg/{{heroRecord.hero.name}}.png" /></td>
-                <td>{{heroRecord.hero.localized_name}}</td>
+                <td>
+                    <img id="hero-img" src="/public/images/heroes_lg/{{heroRecord.hero.name}}.png"/>
+                    <h4>{{heroRecord.hero.localized_name}}</h4>
+                </td>
+
                 <td>{{heroRecord.totalGames}}</td>
                 <td>{{heroRecord.wins}}</td>
                 <td>{{heroRecord.losses}}</td>
+
+                <td>{{heroRecord.winRate}}%</td>
+                <td>{{heroRecord.bestWinStreak}}</td>
+                <td>{{heroRecord.currentWinStreak}}</td>
+                
+                <td>{{heroRecord.averageKills}}</td>
+                <td>{{heroRecord.averageDeaths}}</td>
+                <td>{{heroRecord.averageAssists}}</td>
+                <td>{{heroRecord.averageGpm}}</td>
+                <td>{{heroRecord.averageXpm}}</td>
             </tr>
         </ng-template>
         </tbody>

@@ -7,6 +7,10 @@ var config = require('./gulp.config')();
 var cleanCSS = require('gulp-clean-css');
 var clean = require('gulp-clean');
 var rename = require('gulp-rename');
+var gutil = require('gulp-util');
+var watch = require('gulp-watch');
+var refresh = require('gulp-refresh');
+var ts = require('gulp-typescript');
 var $ = require('gulp-load-plugins')({ lazy: true });
 
 gulp.task("clean:wwwroot", function (cb) {
@@ -112,8 +116,15 @@ gulp.task("copy:envConfig", function () {
         .pipe(gulp.dest(config.configDest));
 });
 
+gulp.task("copy:angular4DataTable", function () {
+    return gulp.src(config.angular4DataTable, 
+        { base: config.node_modules })
+        .pipe(gulp.dest(config.lib));
+});
+
 gulp.task("dependencies", [
     "copy:angular",
+    "copy:angular4DataTable",
     "copy:angularWebApi",
     "copy:bootstrap",
     "copy:corejs",
@@ -129,9 +140,75 @@ gulp.task("dependencies", [
     "copy:envConfig"
 ]);
 
-gulp.task("watch", function () {
-    return $.watch(config.app)
-        .pipe(gulp.dest(config.appDest));
+gulp.task("start-livereload", function() {
+    livereload.listen({ start: true });
+});
+
+gulp.task("watch-html", function() {
+    //HTML change + prints log in console
+    gulp.watch('app/**/*.html').on('change', function (file) {
+        console.log(file.path);
+        gulp
+            .src(file.path, { "base": config.baseWebRoot })
+            .pipe(gulp.dest(config.appDest))
+            .pipe(refresh(file.path));
+    });
+});
+
+gulp.task("watch-ts", ['copy:app'], function () {
+    // Javascript change + prints log in console
+    return watch('app/**/*.ts').on('change', function(file) {
+        refresh.changed(file);
+            gutil.log(gutil.colors.yellow('TypeScript file changed' + ' (' + file + ')'));
+        });
+});
+
+gulp.task("watch-css", function () {
+    // SASS/CSS change + prints log in console
+    gulp.watch('app/**/*.css').on('change', function (file) {
+        console.log(file.path);
+        gulp
+            .src(file.path)
+            .pipe(gulp.dest(config.appDest))
+            .pipe(refresh());
+    });
+});
+
+var tsProject = ts.createProject('tsconfig.json');
+
+gulp.task("watch", ['watch-html', 'watch-css'], function () {
+
+    // Start gulp-refresh (live-reload)
+    refresh.listen({ start: true });
+
+    //gulp.watch('app/**/*.html').on('change', function (file) {
+    //    console.log(file.path);
+    //    gulp
+    //        .src(file.path, { "base": config.baseWebRoot })
+    //        .pipe(gulp.dest(config.appDest))
+    //        .pipe(refresh());
+    //});
+
+    //gulp.watch('app/**/*.css').on('change', function (file) {
+    //    console.log(file.path);
+    //    gulp
+    //        .src(file.path, { "base": config.baseWebRoot })
+    //        .pipe(gulp.dest(config.appDest))
+    //        .pipe(refresh());
+    //});
+
+    gulp.watch('app/**/*.ts').on('change', function (file) {
+
+        var tsResult = gulp.src(file.path)
+            .pipe(tsProject());
+
+        //gulp
+        //    .src(tsResult.js)
+        //    .pipe(gulp.dest(config.appDest))
+        //    .pipe(refresh());
+
+        tsResult.js.pipe(gulp.dest(config.appDest));
+    });
 });
 
 gulp.task("default", ['minify', "dependencies"]);

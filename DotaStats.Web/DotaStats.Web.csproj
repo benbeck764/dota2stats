@@ -121,7 +121,6 @@
     <Content Include="app\dashboard\dashboard.component.template.html" />
     <Content Include="app\hero-details\hero\permin\permin.template.html" />
     <Content Include="wwwroot\**" />
-   
     <Content Include="config\env.development.json" />
     <Content Include="config\env.production.json" />
     <None Include="Properties\PublishProfiles\dota2stats - Web Deploy %282%29.pubxml" />
@@ -701,10 +700,13 @@
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+       Other similar extension points exist, see Microsoft.Common.targets.-->
   <Target Name="BeforeBuild">
+	<ItemGroup>
+        <Content Include="wwwroot\**" />
+    </ItemGroup>
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <!-- <Target Name="AfterBuild"> -->
+  <!-- </Target> -->
+  
 </Project>

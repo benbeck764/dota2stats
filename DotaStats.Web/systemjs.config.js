@@ -24,7 +24,8 @@
             '@angular/forms': 'lib:@angular/forms/bundles/forms.umd.js',
             // other libraries
             'rxjs': 'lib:rxjs',
-            'angular-in-memory-web-api': 'lib:angular-in-memory-web-api'
+            'angular-in-memory-web-api': 'lib:angular-in-memory-web-api',
+            'angular-4-data-table': 'lib:angular-4-data-table/dist'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -36,6 +37,10 @@
                 defaultExtension: 'js'
             },
             'angular-in-memory-web-api': {
+                main: './index.js',
+                defaultExtension: 'js'
+            },
+            'angular-4-data-table': {
                 main: './index.js',
                 defaultExtension: 'js'
             }
